@@ -1,0 +1,14 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst dec_test.sem -pg 1 -lvl 3 -y 90
+preplace inst dec_test -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst dec_test.master -pg 1 -lvl 2 -y 30
+preplace inst dec_test.clk_0 -pg 1 -lvl 1 -y 30
+preplace netloc FAN_OUT<net_container>dec_test</net_container>(SLAVE)sem.ctl_slave,(SLAVE)sem.ram_slave,(MASTER)master.m0) 1 2 1 460
+preplace netloc EXPORT<net_container>dec_test</net_container>(SLAVE)dec_test.sem_export,(SLAVE)sem.sem) 1 0 3 NJ 180 NJ 180 NJ
+preplace netloc EXPORT<net_container>dec_test</net_container>(SLAVE)dec_test.clk,(SLAVE)clk_0.clk_in) 1 0 1 NJ
+preplace netloc FAN_OUT<net_container>dec_test</net_container>(SLAVE)master.clk_reset,(MASTER)clk_0.clk_reset,(SLAVE)sem.reset_sink) 1 1 2 290 120 440
+preplace netloc FAN_OUT<net_container>dec_test</net_container>(MASTER)clk_0.clk,(SLAVE)master.clk,(SLAVE)sem.clock) 1 1 2 310 100 N
+preplace netloc EXPORT<net_container>dec_test</net_container>(SLAVE)clk_0.clk_in_reset,(SLAVE)dec_test.reset) 1 0 1 NJ
+levelinfo -pg 1 0 80 600
+levelinfo -hier dec_test 90 120 340 490 590
